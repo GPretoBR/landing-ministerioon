@@ -83,11 +83,11 @@ const units = [
 const faq = [
   {
     q: "Nossa igreja é pequena. Faz sentido para nós?",
-    a: "O plano Essencial foi pensado para igrejas que estão começando a organizar membros, eventos e financeiro em um só lugar. No ciclo anual ele sai por R$ 508,98, o que dá cerca de R$ 1,39 por dia. Se a igreja crescer, você muda de plano dentro do próprio sistema.",
+    a: "O plano Starter foi pensado para a igreja de uma unidade: membros ilimitados, 2 administradores e implantação grátis. No ciclo anual ele sai por R$ 599,00, cerca de R$ 1,64 por dia. Se a igreja crescer, você muda de plano dentro do próprio sistema.",
   },
   {
     q: "Temos sede e filiais. Cada uma precisa de uma conta separada?",
-    a: "Não. O MinisterioOn trabalha com matriz e filiais vinculadas. A Central de Filiais mostra membros, ativos e pendências de cada unidade, e a liderança pode filtrar o painel por unidade ou ver a rede toda.",
+    a: "Não. O MinisterioOn trabalha com matriz e filiais vinculadas na mesma conta. O plano Pro inclui até 2 filiais ou congregações, o Premium até 5 e o Enterprise não tem limite. A Central de Filiais mostra membros, ativos e pendências de cada unidade.",
   },
   {
     q: "Nosso secretário não é da área de tecnologia. Vai conseguir usar?",
@@ -172,8 +172,8 @@ export default function Home() {
                 </a>
               </div>
               <p className="mt-4 max-w-md text-sm text-white/75">
-                Você fala com uma pessoa da equipe, tira as dúvidas e só contrata se fizer sentido. Planos a partir de
-                R$ 49,90 por mês.
+                Você fala com uma pessoa da equipe, tira as dúvidas e só contrata se fizer sentido. Membros ilimitados
+                em todos os planos, a partir de R$ 49,91 por mês no plano anual.
               </p>
               <ul className="mt-8 grid gap-2.5 text-sm text-white/85 sm:grid-cols-3 sm:gap-4">
                 {[
@@ -423,9 +423,9 @@ export default function Home() {
               Um plano para o tamanho da sua igreja hoje, com espaço para crescer.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
-              Valores por igreja, não por membro. Escolha o ciclo de pagamento: quanto mais longo, menor o valor por mês.
+              Valores por igreja, não por membro: todos os planos têm membros ilimitados. O que muda entre eles é o número de administradores e de filiais. Quanto mais longo o ciclo de pagamento, menor o valor por mês.
             </p>
-            <div className="mt-10 xl:-mx-10">
+            <div className="mt-10">
               <Pricing />
             </div>
           </div>
@@ -507,7 +507,7 @@ export default function Home() {
                   "Membros, visitantes e famílias em fichas atualizadas",
                   "Agenda, escalas e EBD num calendário que todos consultam",
                   "Sede e filiais acompanhadas no mesmo painel",
-                  "Planos a partir de R$ 49,90 por mês",
+                  "Membros ilimitados, a partir de R$ 49,91 por mês no plano anual",
                 ].map((t) => (
                   <li key={t} className="flex gap-3">
                     <Check className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />

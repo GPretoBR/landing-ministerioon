@@ -49,14 +49,14 @@ Itens pendentes em `src/lib/config.ts`:
 
 Tudo o que está na página foi tirado do próprio sistema, no ambiente de homologação, em 26/11/2026:
 
-- **Planos e preços**: tela "Atualizar Plano". Valores em `src/lib/plans.ts`. As economias por ciclo (5%, 10%, 15%) são calculadas a partir desses valores.
+- **Planos e preços**: "Tabela oficial de planos e tarifas" (`tabela_precos_ministerioon.pdf`, recebida em 26/11/2026). Os planos são Starter, Pro, Premium e Enterprise, com limites de administradores e filiais, taxa de implantação e valores por ciclo. Tudo está em `src/lib/plans.ts`. O valor mensal equivalente é truncado nos centavos, como na tabela. A economia exibida em cada plano é calculada a partir dos valores e arredondada para baixo.
 - **Módulos**: menu lateral do sistema. A página avisa que os módulos variam conforme o plano.
 - **Upgrade proporcional e downgrade na renovação**: textos da tela de planos.
 - **Central de Ajuda e chamados**: tela `/central-ajuda/`.
 
 Os painéis mostrados na página são reproduções em HTML, com dados fictícios e legenda informando isso. Nenhum número, cliente, depoimento ou garantia foi inventado.
 
-Ainda não confirmado, e por isso fora da página: teste grátis, garantia, fidelidade e multa, prazo de implantação, limite de usuários de cada plano e preço do usuário adicional para todos os planos. Foi visto R$ 7,00/usuário/mês somente no plano Profissional.
+Ainda não confirmado, e por isso fora da página: teste grátis, garantia, fidelidade e multa, prazo de implantação, preço de administrador extra além do limite do plano e quais módulos entram em cada plano.
 
 ## Eventos de medição
 

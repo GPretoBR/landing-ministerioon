@@ -14,7 +14,7 @@ const sans = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swa
 
 const title = "MinisterioOn: sistema de gestão para igrejas com matriz e filiais";
 const description =
-  "Membros, visitantes, agenda, escalas, células, patrimônio e relatórios da sua igreja em um só painel, da sede a cada filial. Planos a partir de R$ 49,90 por mês.";
+  "Membros, visitantes, agenda, escalas, células, patrimônio e relatórios da sua igreja em um só painel, da sede a cada filial. Membros ilimitados em todos os planos.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -48,7 +48,7 @@ const jsonLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description,
-  offers: { "@type": "AggregateOffer", priceCurrency: "BRL", lowPrice: "49.90", highPrice: "299.00", offerCount: 5 },
+  offers: { "@type": "AggregateOffer", priceCurrency: "BRL", lowPrice: "59.90", highPrice: "299.90", offerCount: 3 },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
