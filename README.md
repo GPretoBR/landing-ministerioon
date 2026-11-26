@@ -16,7 +16,7 @@ Crie um `.env.local` (ou configure as variáveis na hospedagem):
 
 | Variável | Obrigatória | Para que serve |
 |---|---|---|
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | não | Substitui o número comercial padrão (`554198923109`, definido em `src/lib/config.ts`). Só dígitos, com DDI e DDD. |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | não | Substitui o número comercial padrão (`5541998923109`, em `src/lib/config.ts`). Só dígitos, com DDI e DDD. |
 | `NEXT_PUBLIC_SITE_URL` | sim | URL final da página. É usada no canonical, no Open Graph e no sitemap. |
 | `NEXT_PUBLIC_GTM_ID` | não | Google Tag Manager |
 | `NEXT_PUBLIC_GA4_ID` | não | GA4 direto. Só é usado se não houver GTM. |
