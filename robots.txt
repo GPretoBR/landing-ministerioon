@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://gpretobr.github.io/landing-ministerioon/sitemap.xml
