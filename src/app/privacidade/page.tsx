@@ -6,7 +6,7 @@ import { Logo } from "@/components/Logo";
 export const metadata: Metadata = {
   title: "Política de privacidade da página | MinisterioOn",
   description: "Como esta página trata dados de visitantes, cookies e contato pelo WhatsApp.",
-  alternates: { canonical: "/privacidade/" },
+  alternates: { canonical: `${site.url}/privacidade/` },
 };
 
 /**
