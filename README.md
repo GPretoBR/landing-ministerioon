@@ -10,6 +10,20 @@ npm run dev     # http://localhost:3000
 npm run build   # gera out/
 ```
 
+## Publicação atual
+
+O site está no ar em **https://gpretobr.github.io/landing-ministerioon/**. Ele é servido pelo GitHub Pages a partir do branch `gh-pages`, que guarda só o build estático.
+
+Para atualizar o site, gere o build com o subcaminho e publique a pasta `out/` no branch `gh-pages`:
+
+```powershell
+$env:NEXT_PUBLIC_BASE_PATH="/landing-ministerioon"; $env:NEXT_PUBLIC_SITE_URL="https://gpretobr.github.io/landing-ministerioon"; npm run build
+```
+
+Com domínio próprio (ex.: `ministerioon.com.br`), deixe `NEXT_PUBLIC_BASE_PATH` vazio, defina `NEXT_PUBLIC_SITE_URL` com o domínio e configure o domínio em Settings → Pages.
+
+Para publicar automaticamente a cada push, o token do `gh` precisa do escopo `workflow` (`gh auth refresh -s workflow`). Com ele, dá para adicionar um workflow de GitHub Actions de deploy.
+
 ## Antes de publicar (obrigatório)
 
 Crie um `.env.local` (ou configure as variáveis na hospedagem):
