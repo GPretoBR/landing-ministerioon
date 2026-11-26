@@ -19,8 +19,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://ministerioon.com.br",
   appLoginUrl: "https://app.ministerioon.com.br/login/",
 
-  /** PENDENTE: número do WhatsApp comercial, só dígitos, com DDI e DDD (ex.: 5541999999999). */
-  whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "").replace(/\D/g, ""),
+  /** WhatsApp comercial (+55 41 9892-3109). A variável NEXT_PUBLIC_WHATSAPP_NUMBER, se definida, tem prioridade. */
+  whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "554198923109").replace(/\D/g, ""),
 
   /** PENDENTE: dados institucionais. Campos vazios não são exibidos no rodapé. */
   company: {
