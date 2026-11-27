@@ -39,7 +39,7 @@ Crie um `.env.local` (ou configure as variáveis na hospedagem):
 
 Itens pendentes em `src/lib/config.ts`:
 
-- **Vídeo de demonstração**: preencha `demoVideoUrl` (ou `NEXT_PUBLIC_DEMO_VIDEO_URL`). O botão "Assistir demonstração de 2 minutos" só aparece no hero depois disso.
+- **Vídeo de demonstração**: o arquivo é `public/demo.mp4` e a capa é `public/demo-poster.jpg`. O vídeo é gerado pelo projeto `video-demo`, com a voz pt-BR-AntonioNeural das videoaulas. O botão "Assistir demonstração" abre o vídeo numa janela sobre a página e registra os eventos `demo_open`, `demo_play` e `demo_complete`. Para esconder o botão, deixe `demoVideoUrl` vazio.
 - **Afirmações comerciais**: App Android/iOS, Pix integrado com todos os bancos, QR Code por congregação e departamento, vídeos de treinamento, LGPD, backup automático, ausência de fidelidade e multa e "Confira Aki Tecnologia" foram incluídos a pedido do cliente (proposta de 27/11/2026). Eles não puderam ser conferidos na conta de homologação usada. Se algum deixar de valer, remova da página.
 
 - **Dados institucionais**: razão social, CNPJ, e-mail, Instagram e YouTube. Campos vazios não aparecem no rodapé.

@@ -44,10 +44,11 @@ export const site = {
   },
 
   /**
-   * PENDENTE: link do vídeo de demonstração (YouTube, Vimeo etc.).
-   * Enquanto estiver vazio, o botão "Assistir demonstração" não aparece.
+   * Vídeo de demonstração (public/demo.mp4). Deixe vazio para esconder o botão "Assistir demonstração".
+   * NEXT_PUBLIC_DEMO_VIDEO_URL permite apontar para outro arquivo.
    */
-  demoVideoUrl: process.env.NEXT_PUBLIC_DEMO_VIDEO_URL || "",
+  demoVideoUrl: process.env.NEXT_PUBLIC_DEMO_VIDEO_URL || `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/demo.mp4`,
+  demoPosterUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/demo-poster.jpg`,
 
   analytics: {
     gtmId: process.env.NEXT_PUBLIC_GTM_ID || "",

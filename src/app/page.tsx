@@ -10,7 +10,6 @@
   Building2,
   Smartphone,
   QrCode,
-  PlayCircle,
   Lock,
   CloudUpload,
   Headset,
@@ -21,6 +20,7 @@ import { DashboardMock } from "@/components/DashboardMock";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Areas } from "@/components/Areas";
 import { Pillars } from "@/components/Pillars";
+import { DemoButton } from "@/components/DemoButton";
 import { Pricing } from "@/components/Pricing";
 import { LeadForm } from "@/components/LeadForm";
 import { Footer } from "@/components/Footer";
@@ -179,10 +179,7 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppButton location="hero" label="Conversar com a equipe" />
                 {site.demoVideoUrl ? (
-                  <a href={site.demoVideoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-                    <PlayCircle className="size-5" aria-hidden="true" />
-                    Assistir demonstração de 2 minutos
-                  </a>
+                  <DemoButton />
                 ) : (
                   <a href="#planos" className="btn btn-ghost">
                     Ver planos e preços
