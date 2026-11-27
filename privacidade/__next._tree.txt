@@ -1,6 +1,6 @@
-:HL["/landing-ministerioon/_next/static/chunks/3i6otge_718hs.css","style"]
+:HL["/landing-ministerioon/_next/static/chunks/3160bc-n4yses.css","style"]
 :HL["/landing-ministerioon/_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/landing-ministerioon/_next/static/media/8056169c9d560660-s.p.41rroleoq1br7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"privacidade","h":96,"c":"$Q2"}]]
-0:{"b":"QdHRfm-wQ-39zspXVH_hT","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"4o_0yOeik4tzXdUyW0MoL","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

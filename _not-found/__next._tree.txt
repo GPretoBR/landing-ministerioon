@@ -1,4 +1,4 @@
-:HL["/landing-ministerioon/_next/static/chunks/3i6otge_718hs.css","style"]
+:HL["/landing-ministerioon/_next/static/chunks/3160bc-n4yses.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"QdHRfm-wQ-39zspXVH_hT","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"4o_0yOeik4tzXdUyW0MoL","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
