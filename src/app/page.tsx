@@ -20,7 +20,7 @@ import { DashboardMock } from "@/components/DashboardMock";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Areas } from "@/components/Areas";
 import { Pillars } from "@/components/Pillars";
-import { DemoButton } from "@/components/DemoButton";
+import { DemoButton, DemoVideo } from "@/components/DemoButton";
 import { Pricing } from "@/components/Pricing";
 import { LeadForm } from "@/components/LeadForm";
 import { Footer } from "@/components/Footer";
@@ -232,6 +232,32 @@ export default function Home() {
             })}
           </ul>
         </section>
+
+        {/* DEMONSTRAÇÃO EM VÍDEO */}
+        {site.demoVideoUrl && (
+          <section id="demonstracao" className="bg-white py-16 sm:py-20" aria-labelledby="demo-titulo">
+            <div className={`${wrap} grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14`}>
+              <div>
+                <h2 id="demo-titulo" className="display text-4xl font-bold sm:text-5xl">
+                  Veja o MinisterioOn funcionando em pouco mais de 1 minuto.
+                </h2>
+                <p className="mt-5 text-lg leading-relaxed text-ink-soft">
+                  O painel da liderança, o aplicativo do membro, o Pix com QR Code por departamento e o suporte que acompanha a
+                  sua equipe.
+                </p>
+                <WhatsAppButton
+                  location="demo_section"
+                  label="Gostei, quero conversar"
+                  className="mt-7"
+                  message="Olá! Assisti ao vídeo de demonstração do MinisterioOn e quero conversar sobre a minha igreja."
+                />
+              </div>
+              <div className="order-first lg:order-none">
+                <DemoVideo />
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 02-03 · PROBLEMA + CUSTO DA INAÇÃO */}
         <section className="py-20 sm:py-28" aria-labelledby="problema-titulo">
