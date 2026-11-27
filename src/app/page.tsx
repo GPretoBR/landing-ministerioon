@@ -20,7 +20,7 @@ import { DashboardMock } from "@/components/DashboardMock";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Areas } from "@/components/Areas";
 import { Pillars } from "@/components/Pillars";
-import { DemoButton, DemoVideo } from "@/components/DemoButton";
+import { DemoVideo } from "@/components/DemoButton";
 import { Pricing } from "@/components/Pricing";
 import { LeadForm } from "@/components/LeadForm";
 import { Footer } from "@/components/Footer";
@@ -178,13 +178,6 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppButton location="hero" label="Conversar com a equipe" />
-                {site.demoVideoUrl ? (
-                  <DemoButton />
-                ) : (
-                  <a href="#planos" className="btn btn-ghost">
-                    Ver planos e preços
-                  </a>
-                )}
               </div>
               <p className="mt-4 max-w-md text-sm text-white/75">
                 Você fala com uma pessoa da equipe, tira as dúvidas e só contrata se fizer sentido. Sem fidelidade e
