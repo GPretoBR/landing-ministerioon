@@ -24,7 +24,7 @@ export const site = {
 
   /** PENDENTE: dados institucionais. Campos vazios não são exibidos no rodapé. */
   company: {
-    legalName: "",
+    legalName: "Confira Aki Tecnologia",
     cnpj: "",
     email: "",
     instagram: "", // URL completa
@@ -37,14 +37,17 @@ export const site = {
    */
   testimonials: [] as Testimonial[],
 
-  /**
-   * Argumento de momento (sem escassez inventada). Revise ou desative quando a data passar.
-   */
-  seasonal: {
-    enabled: true,
-    title: "Comece 2027 com a igreja já organizada.",
-    text: "Dezembro é quando a liderança monta o calendário do próximo ano. Quem começa agora abre janeiro com membros, departamentos, agenda e escalas já no sistema, em vez de começar o ano migrando planilhas.",
+  /** Fechamento perene (funciona em qualquer época do ano). */
+  closing: {
+    title: "Não espere a próxima reunião de diretoria para colocar a casa em ordem.",
+    text: "Em poucos dias sua igreja sai do improviso das planilhas e passa a operar com visão ministerial, aplicativo próprio e transparência financeira.",
   },
+
+  /**
+   * PENDENTE: link do vídeo de demonstração (YouTube, Vimeo etc.).
+   * Enquanto estiver vazio, o botão "Assistir demonstração" não aparece.
+   */
+  demoVideoUrl: process.env.NEXT_PUBLIC_DEMO_VIDEO_URL || "",
 
   analytics: {
     gtmId: process.env.NEXT_PUBLIC_GTM_ID || "",

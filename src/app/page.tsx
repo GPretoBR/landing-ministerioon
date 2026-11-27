@@ -3,18 +3,24 @@
   X,
   Network,
   ShieldCheck,
-  LifeBuoy,
   FileSpreadsheet,
   Palette,
   ArrowUpRight,
   Plus,
   Building2,
+  Smartphone,
+  QrCode,
+  PlayCircle,
+  Lock,
+  CloudUpload,
+  Headset,
 } from "lucide-react";
 import { site } from "@/lib/config";
 import { Logo } from "@/components/Logo";
 import { DashboardMock } from "@/components/DashboardMock";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Areas } from "@/components/Areas";
+import { Pillars } from "@/components/Pillars";
 import { Pricing } from "@/components/Pricing";
 import { LeadForm } from "@/components/LeadForm";
 import { Footer } from "@/components/Footer";
@@ -31,7 +37,7 @@ const officeLines = [
   "“Quem está escalado na recepção domingo? Mandei no grupo, mas ninguém confirmou.”",
   "“A filial ainda não mandou o relatório do mês.”",
   "“Pastor, quantos membros ativos nós temos hoje?” “Deixa eu levantar e te falo semana que vem.”",
-  "“Quem pegou a caixa de som emprestada?”",
+  "“Pastor, chegaram 14 comprovantes de Pix no meu WhatsApp. De qual departamento é cada um?”",
 ];
 
 const costs = [
@@ -54,6 +60,7 @@ const compare = [
   { item: "Visitantes e novos convertidos", before: "Ficha de papel recolhida no culto", after: "Cadastro próprio, visível para quem vai acompanhar" },
   { item: "Escalas de culto", before: "Combinadas no grupo do WhatsApp", after: "Escala no sistema, com vagas e confirmação" },
   { item: "Filiais", before: "Relatório por mensagem, quando chega", after: "Central de Filiais com os números de cada unidade" },
+  { item: "Dízimos e ofertas", before: "Comprovantes de Pix soltos no WhatsApp", after: "Pix integrado, com QR Code por congregação e departamento" },
   { item: "Patrimônio", before: "Ninguém sabe com quem está", after: "Bens com responsável, retiradas e manutenções" },
   { item: "Acesso aos dados", before: "Uma senha compartilhada, ou nenhuma", after: "Um usuário por pessoa, com permissões por função" },
 ];
@@ -91,11 +98,15 @@ const faq = [
   },
   {
     q: "Nosso secretário não é da área de tecnologia. Vai conseguir usar?",
-    a: "O sistema tem uma Central de Ajuda com guias passo a passo, de “cadastrar um novo membro” a “criar uma escala”. Se travar em algo, dá para abrir um chamado para a equipe de suporte direto do painel.",
+    a: "Sim. Há trilhas de vídeos curtos para cada perfil de acesso, o assistente “Me Ensina” dentro das telas e a Central de Ajuda com guias passo a passo. Se travar em algo, quem responde o chamado é uma pessoa da equipe de suporte.",
   },
   {
     q: "Já temos tudo em planilha. Vamos ter que digitar de novo?",
     a: "Não necessariamente. O sistema tem um módulo de importação de dados. Na conversa, mostre como sua planilha está e a equipe orienta o melhor caminho para trazer os cadastros.",
+  },
+  {
+    q: "Como funcionam as contribuições por Pix?",
+    a: "O Pix é integrado com qualquer banco. Você gera QR Codes fixos para cada congregação ou departamento, como Missões, Jovens e Obras, e o membro também pode contribuir pelo aplicativo. Cada entrada chega identificada, sem conferência manual de comprovantes.",
   },
   {
     q: "Quem consegue ver os dados dos membros?",
@@ -111,7 +122,7 @@ const faq = [
   },
   {
     q: "Existe fidelidade ou multa de cancelamento?",
-    a: "As condições de contrato de cada plano e ciclo são apresentadas na conversa, antes de qualquer pagamento. Pergunte à equipe: é melhor decidir com isso claro.",
+    a: "Não. Sem fidelidade forçada e sem multa de cancelamento. Você fica no MinisterioOn pelos resultados, não por amarra contratual.",
   },
 ];
 
@@ -152,34 +163,41 @@ export default function Home() {
             className="pointer-events-none absolute inset-0 opacity-[0.07]"
             style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "22px 22px" }}
           />
-          <div className={`${wrap} relative grid items-center gap-12 pt-12 sm:pt-16 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:pt-20`}>
+          <div className={`${wrap} relative grid items-center gap-12 pt-12 sm:pt-16 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:pt-16`}>
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/85">
                 <Building2 className="size-4 text-gold" aria-hidden="true" />
                 Sistema de gestão para igrejas
               </p>
-              <h1 className="display mt-5 text-[2.5rem] font-extrabold sm:text-6xl lg:text-[3.6rem] xl:text-[3.9rem]">
-                Membros, agenda, escalas e filiais da sua igreja num só painel.
+              <h1 className="display mt-5 text-[2.2rem] font-extrabold sm:text-5xl lg:text-[2.9rem] xl:text-[3.25rem]">
+                A gestão completa que liberta o pastor da burocracia e conecta toda a sua igreja.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-                O MinisterioOn tira a secretaria das planilhas e dos grupos de WhatsApp. A liderança vê quem está ativo, o
-                que está pendente e o que vem pela frente, na sede e em cada filial.
+                Secretaria, tesouraria com Pix integrado, gestão de matriz e filiais e aplicativo exclusivo para os
+                membros em um só lugar. Da sede à congregação mais distante, tudo sob controle e com transparência.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppButton location="hero" label="Conversar com a equipe" />
-                <a href="#planos" className="btn btn-ghost">
-                  Ver planos e preços
-                </a>
+                {site.demoVideoUrl ? (
+                  <a href={site.demoVideoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+                    <PlayCircle className="size-5" aria-hidden="true" />
+                    Assistir demonstração de 2 minutos
+                  </a>
+                ) : (
+                  <a href="#planos" className="btn btn-ghost">
+                    Ver planos e preços
+                  </a>
+                )}
               </div>
               <p className="mt-4 max-w-md text-sm text-white/75">
-                Você fala com uma pessoa da equipe, tira as dúvidas e só contrata se fizer sentido. Membros ilimitados
-                em todos os planos, a partir de R$ 49,91 por mês no plano anual.
+                Você fala com uma pessoa da equipe, tira as dúvidas e só contrata se fizer sentido. Sem fidelidade e
+                sem multa de cancelamento.
               </p>
-              <ul className="mt-8 grid gap-2.5 text-sm text-white/85 sm:grid-cols-3 sm:gap-4">
+              <ul className="mt-8 grid gap-2.5 text-[15px] text-white/90">
                 {[
-                  [Network, "Sede e filiais no mesmo sistema"],
-                  [ShieldCheck, "Um usuário por pessoa, com permissões"],
-                  [LifeBuoy, "Central de ajuda e chamados"],
+                  [Smartphone, "App próprio para membros e liderança (Android e iOS)"],
+                  [QrCode, "Dízimos e ofertas via Pix integrado (todos os bancos) + QR Code por congregação"],
+                  [Network, "Sede e filiais unificadas, membros ilimitados a partir de R$ 49,91/mês"],
                 ].map(([Icon, t]) => {
                   const I = Icon as typeof Network;
                   return (
@@ -193,6 +211,29 @@ export default function Home() {
             </div>
             <DashboardMock />
           </div>
+        </section>
+
+        {/* SELOS DE CONFIANÇA */}
+        <section aria-label="Segurança e suporte" className="border-b border-line bg-white">
+          <ul className={`${wrap} grid grid-cols-2 gap-x-6 gap-y-5 py-7 text-sm md:grid-cols-4`}>
+            {[
+              [Lock, "Dados protegidos", "Tratamento conforme a LGPD"],
+              [CloudUpload, "Backup automático", "Cópias em nuvem"],
+              [Headset, "Suporte humano", "Gente de verdade para ajudar"],
+              [ShieldCheck, "Confira Aki Tecnologia", "Empresa responsável pelo sistema"],
+            ].map(([Icon, t, d]) => {
+              const I = Icon as typeof Lock;
+              return (
+                <li key={t as string} className="flex items-start gap-3">
+                  <I className="mt-0.5 size-5 shrink-0 text-indigo" aria-hidden="true" />
+                  <span>
+                    <span className="block font-semibold">{t as string}</span>
+                    <span className="block text-ink-soft">{d as string}</span>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </section>
 
         {/* 02-03 · PROBLEMA + CUSTO DA INAÇÃO */}
@@ -236,8 +277,8 @@ export default function Home() {
               Cada pedaço da rotina da igreja sai do improviso e ganha um lugar.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
-              O MinisterioOn é um sistema web: funciona no navegador do computador e do celular, sem instalar nada. Veja o
-              que muda em cada frente.
+              A equipe usa o MinisterioOn no navegador do computador ou do celular, e os membros usam o aplicativo da
+              igreja. Veja o que muda em cada frente.
             </p>
 
             <div className="mt-12 overflow-hidden rounded-2xl ring-1 ring-line">
@@ -266,6 +307,21 @@ export default function Home() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </section>
+
+        {/* 04b · DIFERENCIAIS: OS 4 PILARES */}
+        <section id="diferenciais" className="py-20 sm:py-28" aria-labelledby="pilares-titulo">
+          <div className={wrap}>
+            <h2 id="pilares-titulo" className="display max-w-3xl text-4xl font-bold sm:text-5xl">
+              Os quatro pilares que fazem do MinisterioOn uma gestão completa.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+              Organizar a secretaria é só o começo. O que muda a rotina do pastor e do tesoureiro está aqui.
+            </p>
+            <div className="mt-14">
+              <Pillars />
             </div>
           </div>
         </section>
@@ -316,7 +372,7 @@ export default function Home() {
         <section id="recursos" className="bg-indigo-wash py-20 sm:py-28" aria-labelledby="recursos-titulo">
           <div className={wrap}>
             <h2 id="recursos-titulo" className="display max-w-3xl text-4xl font-bold sm:text-5xl">
-              Tudo o que a secretaria e a liderança usam, em seis frentes.
+              Tudo o que a secretaria, a tesouraria e a liderança usam.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
               Escolha uma área para ver os módulos e o que muda na prática. Os módulos liberados variam conforme o plano.
@@ -359,7 +415,7 @@ export default function Home() {
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[420px] text-sm">
-                  <caption className="sr-only">Exemplo da Central de Filiais com dados fictícios</caption>
+                  <caption className="sr-only">Exemplo da Central de Filiais</caption>
                   <thead className="text-left text-xs text-ink-soft">
                     <tr>
                       <th scope="col" className="px-5 py-3 font-semibold">Unidade</th>
@@ -385,9 +441,6 @@ export default function Home() {
                   </tbody>
                 </table>
               </div>
-              <figcaption className="border-t border-line px-5 py-3 text-xs text-ink-soft">
-                Ilustração com dados fictícios, no formato da tela real.
-              </figcaption>
             </figure>
           </div>
         </section>
@@ -420,10 +473,10 @@ export default function Home() {
         <section id="planos" className="bg-paper py-20 sm:py-28" aria-labelledby="planos-titulo">
           <div className={wrap}>
             <h2 id="planos-titulo" className="display max-w-3xl text-4xl font-bold sm:text-5xl">
-              Um plano para o tamanho da sua igreja hoje, com espaço para crescer.
+              Sua igreja cresce, sua mensalidade não.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
-              Valores por igreja, não por membro: todos os planos têm membros ilimitados. O que muda entre eles é o número de administradores e de filiais. Quanto mais longo o ciclo de pagamento, menor o valor por mês.
+              Todos os planos contam com membros ilimitados. Você escolhe apenas conforme o tamanho da sua equipe administrativa e o número de congregações.
             </p>
             <div className="mt-10">
               <Pricing />
@@ -445,9 +498,9 @@ export default function Home() {
             </div>
             <div className="grid gap-8 sm:grid-cols-2">
               {[
-                ["Antes de pagar", "Tire todas as dúvidas na conversa pelo WhatsApp: módulos do plano, prazo de implantação e condições de contrato."],
-                ["Central de Ajuda", "Guias passo a passo por assunto: primeiros passos, membros, cultos e eventos, culto ao vivo, usuários e permissões."],
-                ["Chamados de suporte", "Travou em algo? Abra um chamado pelo painel e acompanhe a resposta em “Meus chamados”."],
+                ["Sem fidelidade, sem multa", "Você fica pelos resultados, não por amarra contratual. Cancelar não gera multa."],
+                ["Treinamento em vídeo", "Trilhas de vídeos curtos por perfil de acesso, mais o assistente “Me Ensina” dentro das telas e a Central de Ajuda."],
+                ["Suporte humanizado", "Travou em algo? Abra um chamado pelo painel. Quem responde é uma pessoa da equipe."],
                 ["Plano flexível", "Subiu a demanda, sobe o plano pagando a diferença proporcional. Sem recomeçar nada."],
               ].map(([t, d]) => (
                 <div key={t}>
@@ -496,16 +549,14 @@ export default function Home() {
         <section id="contato" className="bg-indigo py-20 text-white sm:py-28" aria-labelledby="contato-titulo">
           <div className={`${wrap} grid items-start gap-12 lg:grid-cols-[1.1fr_1fr]`}>
             <div>
-              <h2 id="contato-titulo" className="display text-4xl font-extrabold sm:text-6xl">
-                {site.seasonal.enabled ? site.seasonal.title : "Sua igreja organizada, sua liderança enxergando."}
+              <h2 id="contato-titulo" className="display text-4xl font-extrabold sm:text-5xl">
+                {site.closing.title}
               </h2>
-              {site.seasonal.enabled && (
-                <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{site.seasonal.text}</p>
-              )}
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{site.closing.text}</p>
               <ul className="mt-8 space-y-3 text-white/90">
                 {[
-                  "Membros, visitantes e famílias em fichas atualizadas",
-                  "Agenda, escalas e EBD num calendário que todos consultam",
+                  "Aplicativo próprio para membros e liderança",
+                  "Dízimos e ofertas com Pix integrado e QR Code por departamento",
                   "Sede e filiais acompanhadas no mesmo painel",
                   "Membros ilimitados, a partir de R$ 49,91 por mês no plano anual",
                 ].map((t) => (

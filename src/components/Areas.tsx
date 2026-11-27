@@ -7,6 +7,7 @@ import {
   CalendarDays,
   Megaphone,
   Boxes,
+  QrCode,
   GraduationCap,
   type LucideIcon,
 } from "lucide-react";
@@ -58,11 +59,23 @@ const areas: Area[] = [
     ],
   },
   {
+    id: "tesouraria",
+    icon: QrCode,
+    name: "Tesouraria e Pix",
+    outcome: "Cada contribuição identificada, sem caçar comprovante.",
+    modules: ["Dízimos", "Ofertas", "Pix integrado (todos os bancos)", "QR Code por congregação", "QR Code por departamento", "Contribuição pelo app", "Prestação de contas"],
+    rows: [
+      { feature: "Pix integrado com qualquer banco", benefit: "A entrada aparece no sistema sem ninguém conferir print de comprovante no WhatsApp." },
+      { feature: "QR Codes fixos por congregação ou departamento", benefit: "Missões, Jovens e Obras recebem cada um no seu QR Code, e o relatório já sai separado." },
+      { feature: "Contribuição pelo aplicativo do membro", benefit: "O membro contribui pelo celular, no culto ou de casa." },
+    ],
+  },
+  {
     id: "comunicacao",
     icon: Megaphone,
     name: "Comunicação",
     outcome: "Recado oficial da igreja num canal da igreja.",
-    modules: ["Chat", "Avisos", "Notícias", "Culto ao vivo (YouTube)", "Testemunhos", "Pedidos de oração", "Equipe de oração", "Documentos"],
+    modules: ["Aplicativo do membro (Android e iOS)", "Chat", "Avisos", "Notícias", "Culto ao vivo (YouTube)", "Testemunhos", "Pedidos de oração", "Equipe de oração", "Documentos"],
     rows: [
       { feature: "Avisos e notícias publicados no sistema", benefit: "O comunicado não se perde entre figurinhas do grupo." },
       { feature: "Pedidos de oração com equipe própria", benefit: "Cada pedido chega a quem vai orar, com discrição." },

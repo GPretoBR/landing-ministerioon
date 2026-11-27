@@ -41,7 +41,7 @@ const nav = [LayoutDashboard, Users, HeartHandshake, CalendarDays, Boxes, Megaph
 
 export function DashboardMock() {
   return (
-    <figure className="hero-mock relative" aria-label="Ilustração do painel do MinisterioOn com dados fictícios">
+    <figure className="hero-mock relative" aria-label="Painel do MinisterioOn">
       <div className="overflow-hidden rounded-2xl bg-white text-ink shadow-[0_40px_80px_-30px_rgba(10,12,50,0.55)] ring-1 ring-black/5">
         {/* barra do navegador */}
         <div className="flex items-center gap-2 border-b border-line bg-[#f2f3f8] px-4 py-2.5" aria-hidden="true">
@@ -125,9 +125,6 @@ export function DashboardMock() {
           </div>
         </div>
       </div>
-      <figcaption className="mt-3 text-center text-xs text-white/75">
-        Interface ilustrativa do painel, com dados fictícios.
-      </figcaption>
     </figure>
   );
 }

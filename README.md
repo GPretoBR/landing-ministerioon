@@ -39,9 +39,12 @@ Crie um `.env.local` (ou configure as variáveis na hospedagem):
 
 Itens pendentes em `src/lib/config.ts`:
 
+- **Vídeo de demonstração**: preencha `demoVideoUrl` (ou `NEXT_PUBLIC_DEMO_VIDEO_URL`). O botão "Assistir demonstração de 2 minutos" só aparece no hero depois disso.
+- **Afirmações comerciais**: App Android/iOS, Pix integrado com todos os bancos, QR Code por congregação e departamento, vídeos de treinamento, LGPD, backup automático, ausência de fidelidade e multa e "Confira Aki Tecnologia" foram incluídos a pedido do cliente (proposta de 27/11/2026). Eles não puderam ser conferidos na conta de homologação usada. Se algum deixar de valer, remova da página.
+
 - **Dados institucionais**: razão social, CNPJ, e-mail, Instagram e YouTube. Campos vazios não aparecem no rodapé.
 - **Depoimentos**: a seção de prova social só aparece quando houver depoimentos reais **e autorizados** na lista `testimonials`.
-- **Mensagem sazonal** ("Comece 2027…"): revise ou desative (`seasonal.enabled = false`) depois de janeiro.
+- **Fechamento**: o texto final fica em `closing` e não depende de data.
 - **Logo**: `src/components/Logo.tsx` e `src/app/icon.svg` têm uma marca provisória. Troque pela marca oficial.
 - **Política de privacidade** (`src/app/privacidade/page.tsx`): é um texto-base. Precisa de revisão jurídica e do canal do encarregado (DPO).
 
@@ -54,7 +57,7 @@ Tudo o que está na página foi tirado do próprio sistema, no ambiente de homol
 - **Upgrade proporcional e downgrade na renovação**: textos da tela de planos.
 - **Central de Ajuda e chamados**: tela `/central-ajuda/`.
 
-Os painéis mostrados na página são reproduções em HTML, com dados fictícios e legenda informando isso. Nenhum número, cliente, depoimento ou garantia foi inventado.
+Os painéis e o celular mostrados na página são reproduções em HTML com dados de exemplo ("Igreja Exemplo"). Por decisão do cliente, a legenda "dados fictícios" foi retirada. Nenhum depoimento, cliente ou número de impacto foi inventado: a seção de depoimentos continua oculta até existirem depoimentos reais.
 
 Ainda não confirmado, e por isso fora da página: teste grátis, garantia, fidelidade e multa, prazo de implantação, preço de administrador extra além do limite do plano e quais módulos entram em cada plano.
 

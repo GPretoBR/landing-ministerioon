@@ -12,9 +12,9 @@ const display = Bricolage_Grotesque({
 });
 const sans = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-const title = "MinisterioOn: sistema de gestão para igrejas com matriz e filiais";
+const title = "MinisterioOn: gestão completa para igrejas, com app para membros e Pix integrado";
 const description =
-  "Membros, visitantes, agenda, escalas, células, patrimônio e relatórios da sua igreja em um só painel, da sede a cada filial. Membros ilimitados em todos os planos.";
+  "Secretaria, tesouraria com Pix integrado, matriz e filiais e aplicativo para os membros em um só lugar. Membros ilimitados em todos os planos, sem fidelidade.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
